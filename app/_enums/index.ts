@@ -1,9 +1,13 @@
-enum Difficulty {
+export enum Difficulty {
     EASY = "easy",
     MEDIUM = "medium",
     HARD = "hard"
 }
 
-export {
-    Difficulty
+export enum Direction {
+    TOP = "top",
+    BOTTOM = "bottom",
+    LEFT = "left",
+    RIGHT = "right"
 }
+
