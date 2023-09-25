@@ -1,4 +1,4 @@
-import GameContainer from "@/_components/GameContainer";
+import GameContainer from "@/_components/game/GameContainer";
 import GameProvider from "@/_providers/game/GameProvider";
 
 export default function Home() {

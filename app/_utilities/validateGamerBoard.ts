@@ -1,8 +1,8 @@
 import { Board, Direction, Hints } from "@/_types";
 import generateHints from "./generateHints";
 
-export default function validateUserBoard(userBoard: Board, originalHints: Hints): boolean {
-    return isBoardValid(userBoard) && doesBoardAlignWithHints(userBoard, originalHints);
+export default function validateUserBoard(gamerBoard: Board, originalHints: Hints): boolean {
+    return isBoardValid(gamerBoard) && doesBoardAlignWithHints(gamerBoard, originalHints);
 }
 
 function doesBoardAlignWithHints(board: Board, hints: Hints): boolean {

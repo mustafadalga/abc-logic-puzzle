@@ -1,5 +1,5 @@
 "use client";
-import Select from "./Select";
+import Select from "@/_components/Select";
 import { Difficulty } from "@/_enums";
 import useGame from "@/_providers/game/useGame";
 
@@ -66,7 +66,7 @@ const GameOptions = () => {
     const { setGameOption, gameState, newGame } = useGame();
     return (
         <section
-            className="grid gap-3 w-full max-w-xl p-8 rounded-md transition-all ease-linear shadow-[0px_0px_3px_0px_#a5b4fc] hover:shadow-[0px_0px_6px_0px_#a5b4fc] bg-white">
+            className="grid gap-3 w-full max-w-xl p-8 rounded-md transition-all ease-linear shadow-[0px_0px_3px_0px_rgb(191,219,254)] hover:shadow-[0px_0px_6px_0px_rgb(147,197,253)] bg-white">
             <h1 className="text-center text-blue-500 font-bold text-2xl lg:text-3xl">Game Options</h1>
 
             <div className="grid gap-1 w-full">

@@ -2,27 +2,28 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import useGame from "@/_providers/game/useGame";
 import GameButtonGroup from "./GameButtonGroup";
-import StopWatch from "./StopWatch";
+import StopWatch from "@/_components/StopWatch";
 import GameBoard from "./GameBoard";
 
 export default function GamePyramidContainer() {
-    const { gameState } = useGame();
+    const { gameState: { isGameCompleted, hints } } = useGame();
     const [ initialDate, setInitialDate ] = useState<Date>(new Date());
-    const previousBoard = useRef<string | null>(null);
-    const memorizeBoard = useMemo(() => JSON.stringify(gameState.gamerBoard), [ gameState.gamerBoard ]);
+    const previousHints = useRef<string | null>(null);
+    const memorizeHints = useMemo(() => JSON.stringify(hints), [ hints ]);
+
 
     useEffect(() => {
-        if (previousBoard.current !== memorizeBoard) {
+        if (previousHints.current !== memorizeHints) {
             setInitialDate(new Date());
-            previousBoard.current = memorizeBoard;
+            previousHints.current = memorizeHints;
         }
-    }, [ initialDate, memorizeBoard ]);
+    }, [ memorizeHints ]);
 
     return (
         <div className="grid gap-10 h-full">
             <StopWatch key={initialDate.getTime()}
                        initialDate={initialDate}
-                       isTimerRunning={!gameState.isGameCompleted}/>
+                       isTimerRunning={!isGameCompleted}/>
             <GameBoard/>
             <GameButtonGroup/>
         </div>
