@@ -43,7 +43,7 @@ export default function GameCells() {
                 <div key={rowIndex}
                      className={`grid border-t border-l last:border-b border-gray-900 ${gridClassNames.col}`}>
                     {row.map((cell, cellIndex) => (
-                        <GameCell key={cellIndex}
+                        <GameCell key={`${rowIndex}-${cellIndex}`}
                                   cell={cell}
                                   onCellClick={handleCellClick}
                                   rowIndex={rowIndex}
