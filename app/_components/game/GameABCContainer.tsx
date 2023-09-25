@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import useGame from "@/_providers/game/useGame";
 import GameButtonGroup from "./GameButtonGroup";

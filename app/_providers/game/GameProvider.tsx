@@ -102,11 +102,11 @@ export default function GameProvider({ children }: { children: ReactNode }) {
     }, [ gameState.dimension, gameState.difficulty ]);
 
     useEffect(() => {
-        if (isEveryRowAndColValid(gameState.gamerBoard)) {
+        if (isEveryRowAndColValid(gameState.gamerBoard) && !gameState.isShowSolution) {
             handleGameWin()
         }
 
-    }, [ gameState.gamerBoard,handleGameWin ])
+    }, [ gameState.gamerBoard, gameState.isShowSolution, handleGameWin ])
 
     const contextValue = useMemo(() => ({
         gameState,
