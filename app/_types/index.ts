@@ -1,8 +1,8 @@
 export type Difficulty = "easy" | "medium" | "hard";
-export type Board = (Cell | null)[][];
-export type Direction = (string | null)[];
 export type Letter = "A" | "B" | "C"
 export type Cell = Letter | null
+export type Board = Cell[][];
+export type Direction = Cell[];
 export type Hints = {
     top: Direction,
     bottom: Direction,

@@ -1,4 +1,4 @@
-import { Board } from "@/_types";
+import { Board, Letter } from "@/_types";
 import createEmptyBoard from "./createEmptyBoard";
 import { letters } from "@/_constants";
 
@@ -23,7 +23,7 @@ function isValidPlacement(board: Board, targetRow: number, targetCol: number, va
     return true;
 }
 
-function placeLetterOnBoard(board: Board, letters: string[]): boolean {
+function placeLetterOnBoard(board: Board, letters: Letter[]): boolean {
     if (letters.length == 0) {
         return true;
     }
