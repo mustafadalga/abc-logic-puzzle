@@ -33,7 +33,7 @@ export default function StopWatch({ initialDate, isTimerRunning }: Props) {
 
     return (
         <div
-            className="mx-auto w-32 lg:w-40 flex justify-center items-center gap-1 bg-blue-200 border border-blue-400 p-2 rounded text-sm lg:text-base">
+            className="mx-auto w-32 lg:w-40 flex justify-center items-center gap-1 bg-blue-100 border border-blue-400 p-2 rounded text-sm lg:text-base">
             <IconClock className="text-blue-700 w-4 h-4 lg:w-6 lg:h-6"/>
             <span className="text-gray-800">{hours.toString().padStart(2, "0")}</span>
             <span className="text-indigo-600">:</span>
