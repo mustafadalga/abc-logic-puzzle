@@ -19,7 +19,6 @@ export default function GameContainer() {
                 }}
                 classNames="fade">
 
-
                 <div ref={nodeRef} className="w-full flex justify-center">
                     {showGame ? <GameAbcContainer/> : <GameOptions/>}
                 </div>

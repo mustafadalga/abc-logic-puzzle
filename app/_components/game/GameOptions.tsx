@@ -63,7 +63,7 @@ const difficulties: ISelect[] = [
 ]
 
 const GameOptions = () => {
-    const { setGameOption, gameState:{difficulty,dimension}, newGame } = useGame();
+    const { setGameOption, gameState, newGame } = useGame();
     return (
         <section
             className="grid gap-3 w-full max-w-xl p-8 rounded-md transition-all ease-linear shadow-[0px_0px_3px_0px_#a5b4fc] hover:shadow-[0px_0px_6px_0px_#a5b4fc] bg-white">
@@ -78,7 +78,7 @@ const GameOptions = () => {
                     onChange={(dimension: ISelect | null) => setGameOption("dimension", dimension?.value as string)}
                     placeholder="Select Difficulty"
                     options={dimensions}
-                    value={dimensions.find(option => Number(option.value) === dimension)}
+                    value={dimensions.find(option => Number(option.value) === gameState.dimension)}
                 />
             </div>
 
@@ -91,7 +91,7 @@ const GameOptions = () => {
                     onChange={(difficulty: ISelect | null) => setGameOption("difficulty", difficulty?.value as Difficulty)}
                     placeholder="Select Difficulty"
                     options={difficulties}
-                    value={difficulties.find(option => option.value === difficulty)}
+                    value={difficulties.find(option => option.value === gameState.difficulty)}
                 />
             </div>
 
