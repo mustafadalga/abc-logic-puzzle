@@ -8,11 +8,32 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      animation:{
+        "scale-out-center": "scale-out-center 0.25s cubic-bezier(0.550, 0.085, 0.680, 0.530) forwards",
+        "scale-in-center": "scale-in-center 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards",
       },
+      keyframes:{
+        "scale-out-center": {
+          "0%": {
+            opacity: "1",
+            transform: "scale(1)"
+          },
+          "100%": {
+            opacity: "0",
+            transform: "scale(0)"
+          }
+        },
+        "scale-in-center": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)"
+          }
+        },
+      }
     },
   },
   plugins: [],
