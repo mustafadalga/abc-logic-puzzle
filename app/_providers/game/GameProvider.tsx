@@ -1,10 +1,13 @@
 "use client";
-import { ReactNode, useCallback, useMemo, useState } from "react";
+import { ReactNode, useCallback, useEffect, useMemo, useState } from "react";
 import GameContext, { GameState } from "./GameContext";
 import { Difficulty } from "@/_enums";
 import generateBoard from "@/_utilities/generateBoard";
 import generateHints from "@/_utilities/generateHints";
 import createEmptyBoard from "@/_utilities/createEmptyBoard";
+import { Cell, CellPosition } from "@/_types";
+import isEveryRowAndColValid from "@/_utilities/isEveryRowAndColValid";
+import validateUserBoard from "@/_utilities/validateGamerBoard";
 
 const LOCALSTORAGE_KEY = "abc-logic-puzzle";
 
@@ -25,6 +28,7 @@ export default function GameProvider({ children }: { children: ReactNode }) {
 
     const [ gameState, setGameState ] = useState<GameState>({
         ...initialOptions,
+        validBoard: [],
         gamerBoard: [],
         hints: {
             top: [],
@@ -39,39 +43,78 @@ export default function GameProvider({ children }: { children: ReactNode }) {
     });
 
     const newGame = useCallback(() => {
-        const board = generateBoard(gameState.dimension);
-        const hints = generateHints(board, gameState.difficulty);
-        const userBoard = createEmptyBoard(gameState.dimension);
+        const validBoard = generateBoard(gameState.dimension);
+        const hints = generateHints(validBoard, gameState.difficulty);
+        const gamerBoard = createEmptyBoard(gameState.dimension);
         setGameState(prevState => ({
             ...prevState,
-            showGame: true,
-            userBoard,
+            validBoard,
+            gamerBoard,
             hints,
+            showGame: true,
             isGameWon: false,
             isGameCompleted: false,
             isShowSolution: false,
         }))
     }, [ gameState.dimension, gameState.difficulty ]);
 
-
     const setGameOption = useCallback((type: "dimension" | "difficulty", value: string | Difficulty) => {
         setGameState(prevState => ({
             ...prevState,
-            [type]: value
+            [type]: type == "dimension" ? Number(value) : value
         }));
+    }, [ setGameState ]);
+
+    const updateCell = useCallback((position: CellPosition, value: Cell) => {
+        setGameState(prevState => {
+            const gamerBoard = prevState.gamerBoard.map(row => [ ...row ]);
+            gamerBoard[position.row][position.col] = value;
+
+            return {
+                ...prevState,
+                gamerBoard
+            }
+        })
+
+    }, [ setGameState ]);
+
+    const handleGameWin = useCallback(() => {
+        const isGameWon = validateUserBoard(gameState.gamerBoard, gameState.hints);
+
+        if (isGameWon) {
+            setGameState(prevState => ({
+                ...prevState,
+                isGameWon,
+                isGameCompleted: true
+            }))
+        }
+
+    }, [ gameState.gamerBoard, gameState.hints ])
+
+
+    useEffect(() => {
         const options = {
             dimension: gameState.dimension,
             difficulty: gameState.difficulty,
         }
+
         localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(options))
     }, [ gameState.dimension, gameState.difficulty ]);
+
+    useEffect(() => {
+        if (isEveryRowAndColValid(gameState.gamerBoard)) {
+            handleGameWin()
+        }
+
+    }, [ gameState.gamerBoard,handleGameWin ])
 
     const contextValue = useMemo(() => ({
         gameState,
         newGame,
         setGameState,
-        setGameOption
-    }), [ gameState, newGame, setGameOption, setGameState ])
+        setGameOption,
+        updateCell
+    }), [ gameState, newGame, setGameOption, setGameState, updateCell ]);
 
     return (
         <GameContext.Provider value={contextValue}>
