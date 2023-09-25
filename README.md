@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Magic Pyramid](https://abc-puzzle.vercel.app)
 
-## Getting Started
+<h6 align="center">
+<a href="https://abc-puzzle.vercel.app/">
+<img width="636" alt="ABC Kadar Kolay" src="https://github.com/mustafadalga/abc-logic-puzzle/assets/25087769/0d6e975f-4ce8-4198-980b-605d76610424">
+</h6>
 
-First, run the development server:
+## What is the ABC Logic Puzzle?
+ABC Logic Puzzle is a table-filling game that has its own unique set of rules distinct from other table-filling games. It requires players to fill a table with the letters 'A', 'B', and 'C' while adhering to specific conditions. The game's difficulty is determined by the size of the table and the number of hints provided. As the table size increases and the number of hints decreases, the game becomes more challenging.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Game Rules
+* Players must fill the table such that the letters 'A', 'B', and 'C' each appear only once in every row and column.
+* Hints are provided outside the table. Each external hint indicates the first visible letter from that viewpoint within the table.
+* The primary objective of the game is to fill the table by ensuring that the provided letters (A, B, C) appear only once in each row and column. Players should use the external hints to assist them in achieving this goal.
+* Upon correctly populating the table while considering the external hints and ensuring each of the letters 'A', 'B', and 'C' appear only once in every row and column, players will have successfully completed the puzzle.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Why Play Magic Pyramid?
+The ABC Logic Puzzle, part of the broader category of mental games, doesn't require any specific knowledge but relies on skills like reasoning, quick thinking, creativity, and the ability to leverage hints. These games are fundamentally designed to enhance thinking abilities. Especially for children aged 6-12, such games play a pivotal role. They can be used to boost children's perceptions, memories, cognitive abilities, and offer the following benefits:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+* **Mental Agility:** Keeps the mind active, making learning easier.
+* **Strategic Planning:** Teaches systematic thinking and planning.
+* **Enhanced Foresight:** Strengthens the ability to anticipate outcomes.
+* **Skill Development:** Helps in acquiring new abilities.
+* **Memory Boost:** Acts as a remedy for forgetfulness.
+* **Improved Concentration:** Heightens focus.
+* **Problem-Solving:** Enhances the ability to generate solutions and think multi dimensionally.
+* **Exploration:** Encourages research and discovery.
+* **Reinforced Patience:** Teaches persistence and resilience in the face of challenges.
+* **Rule Adherence:** Helps in understanding and adhering to rules.
+* **Entertaining Learning:** Allows for a blend of fun and learning during free time.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+[![License](https://img.shields.io/badge/LICENSE-GPL--3.0-orange)](https://github.com/mustafadalga/abc-logiz-puzzle/blob/main/LICENSE)
