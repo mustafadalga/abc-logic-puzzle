@@ -18,7 +18,33 @@ export const metadata: Metadata = {
         'problem-solving games',
         'mental workouts',
         'brain training'
-    ]
+    ],
+    authors: [ { name: "Mustafa Dalga", "url": "https://github.com/mustafadalga/abc-logic-puzzle" } ],
+    icons: [
+        {
+            rel: "icon",
+            type: "image/png",
+            sizes: "32x32",
+            url: "/favicon-32x32.png"
+        },
+        {
+            rel: "apple-touch-icon",
+            sizes: "180x180",
+            url: "/apple-touch-icon.png"
+        },
+        {
+            rel: "icon",
+            type: "image/png",
+            sizes: "16x16",
+            url: "/favicon-16x16.png"
+        }, {
+            rel: "mask-icon",
+            url: "/safari-pinned-tab.svg",
+            color: "#a855f7"
+        }
+    ],
+    themeColor: "#ffffff",
+    applicationName: "ABC Logic Puzzle",
 };
 
 
