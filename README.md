@@ -2,7 +2,8 @@
 
 <h6 align="center">
 <a href="https://abc-puzzle.vercel.app/">
-<img width="636" alt="ABC Kadar Kolay" src="https://github.com/mustafadalga/abc-logic-puzzle/assets/25087769/0d6e975f-4ce8-4198-980b-605d76610424">
+<img width="636" alt="ABC Kadar Kolay" src="https://github.com/mustafadalga/abc-logic-puzzle/assets/25087769/38deaaf7-961e-4f2e-bb55-63295c2a5a3d">
+
 </h6>
 
 ## What is the ABC Logic Puzzle?
